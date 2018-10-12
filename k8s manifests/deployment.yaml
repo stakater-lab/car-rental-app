@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: scar-rental-app
-        image: REPLACE_ME:openjdk:8-jre-alpine
+        image: stakater/carbook:openjdk:8-jre-alpine
         ports:
         - containerPort: 8080
