@@ -8,4 +8,4 @@ deployment:
     app: car-rental-app
   container:
     name: car-rental-app
-    image: stakater/carbook:openjdk:8-jre-alpine
+    image: stakater/carbook:8-jre-alpine
