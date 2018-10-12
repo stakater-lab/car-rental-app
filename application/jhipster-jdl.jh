@@ -1,0 +1,85 @@
+entity Vehicle{
+    ownerId Integer,
+    availability VehicleAvailability,
+    driver DriverAvailability,
+    images ImageBlob
+}
+enum VehicleAvailability{
+    AVAILABLE, BOOKED, IN_SERVICE
+}
+enum DriverAvailability{
+    WITH, WITH_OUT, WITH_AND_WITH_OUT
+}
+entity VehicleType{
+    name String,
+    description String
+}
+entity Rate{
+    hourly BigDecimal,
+    hourlyWithoutDriver BigDecimal,
+    daily BigDecimal,
+    dailyWithoutDriver BigDecimal
+}
+entity MetaData{
+    name String
+    value String
+}
+entity VehicleDetails{
+    manufacturer String
+    color String,
+    transmission Transmission,
+    fuel Fuel
+}
+enum Transmission{
+    AUTOMATIC, MANUAL
+}
+enum Fuel{
+    PETROL, DIESIL, HYBRID
+}
+entity VehicleModel{
+    name String,
+    year Integer
+}
+entity Rating{
+    commulative Double
+}
+entity FeedBack{
+    score Double,
+    comment String
+}
+relationship OneToMany{
+    Rating{feedback} to FeedBack,
+    Vehicle{metaData} to MetaData
+}
+relationship OneToOne{
+    Vehicle{rating} to Rating,
+    Vehicle{type} to VehicleType,
+    Vehicle{rate} to Rate,
+    Vehicle{detail} to VehicleDetails,
+    VehicleDetails{model} to VehicleModel
+}
+entity Provider {
+    id String
+    type ProviderType
+    name String
+    ratings Long
+    noOfVehicles Long
+    emailAddress String
+}
+enum ProviderType {
+    Individual, Business
+}
+entity Address {
+    longitude Double,
+    latitude Double,
+    area String,
+    streetAddress String,
+    postalCode String,
+    city String,
+    province String
+}
+relationship OneToMany{
+    Provider{address} to Address
+}
+service all with serviceImpl
+dto all with mapstruct

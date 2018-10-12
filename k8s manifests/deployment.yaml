@@ -1,0 +1,21 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: car-rental-app
+  labels:     
+    provider: stakater
+    version: "1.0.0"
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+      # This label is used by Service to connect to pod, 
+      # If you change it, so change Service's labelSelector as well.
+        app: car-rental-app
+    spec:
+      containers:
+      - name: scar-rental-app
+        image: REPLACE_ME:openjdk:8-jre-alpine
+        ports:
+        - containerPort: 8080

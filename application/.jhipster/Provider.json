@@ -1,0 +1,43 @@
+{
+    "name": "Provider",
+    "fields": [
+        {
+            "fieldName": "type",
+            "fieldType": "ProviderType",
+            "fieldValues": "Individual,Business"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ratings",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "noOfVehicles",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "emailAddress",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "address",
+            "otherEntityName": "address",
+            "otherEntityRelationshipName": "provider"
+        }
+    ],
+    "changelogDate": "20181011113915",
+    "entityTableName": "provider",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

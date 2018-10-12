@@ -1,0 +1,11 @@
+labels:
+  group: com.stakater.platform
+  provider: stakater
+  version: 1.0.0
+deployment:
+  replicas: 1
+  podLabels:      
+    app: car-rental-app
+  container:
+    name: car-rental-app
+    image: REPLACE_ME:openjdk:8-jre-alpine

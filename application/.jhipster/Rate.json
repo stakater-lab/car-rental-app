@@ -1,0 +1,31 @@
+{
+    "name": "Rate",
+    "fields": [
+        {
+            "fieldName": "hourly",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "hourlyWithoutDriver",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "daily",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "dailyWithoutDriver",
+            "fieldType": "BigDecimal"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20181011113909",
+    "entityTableName": "rate",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

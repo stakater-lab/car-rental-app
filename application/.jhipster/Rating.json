@@ -1,0 +1,26 @@
+{
+    "name": "Rating",
+    "fields": [
+        {
+            "fieldName": "commulative",
+            "fieldType": "Double"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "feedback",
+            "otherEntityName": "feedBack",
+            "otherEntityRelationshipName": "rating"
+        }
+    ],
+    "changelogDate": "20181011113913",
+    "entityTableName": "rating",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

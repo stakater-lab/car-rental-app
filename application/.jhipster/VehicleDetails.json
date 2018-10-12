@@ -1,0 +1,42 @@
+{
+    "name": "VehicleDetails",
+    "fields": [
+        {
+            "fieldName": "manufacturer",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "color",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "transmission",
+            "fieldType": "Transmission",
+            "fieldValues": "AUTOMATIC,MANUAL"
+        },
+        {
+            "fieldName": "fuel",
+            "fieldType": "Fuel",
+            "fieldValues": "PETROL,DIESIL,HYBRID"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "model",
+            "otherEntityName": "vehicleModel",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "vehicleDetails"
+        }
+    ],
+    "changelogDate": "20181011113911",
+    "entityTableName": "vehicle_details",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

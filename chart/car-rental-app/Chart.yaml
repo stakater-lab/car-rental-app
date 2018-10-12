@@ -1,0 +1,12 @@
+apiVersion: v1
+name: car-rental-app
+description: A car rental app.
+version: 1.0.0
+keywords:
+  - stakater
+  - java
+  - maven
+home: https://github.com/stakater-lab/car-rental-app
+maintainers:
+- name: Stakater
+  email: stakater@aurorasolutions.io

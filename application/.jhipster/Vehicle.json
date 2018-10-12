@@ -1,0 +1,73 @@
+{
+    "name": "Vehicle",
+    "fields": [
+        {
+            "fieldName": "ownerId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "availability",
+            "fieldType": "VehicleAvailability",
+            "fieldValues": "AVAILABLE,BOOKED,IN_SERVICE"
+        },
+        {
+            "fieldName": "driver",
+            "fieldType": "DriverAvailability",
+            "fieldValues": "WITH,WITH_OUT,WITH_AND_WITH_OUT"
+        },
+        {
+            "fieldName": "images",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "image"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "rating",
+            "otherEntityName": "rating",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "vehicle"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "type",
+            "otherEntityName": "vehicleType",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "vehicle"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "rate",
+            "otherEntityName": "rate",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "vehicle"
+        },
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "detail",
+            "otherEntityName": "vehicleDetails",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "vehicle"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "metaData",
+            "otherEntityName": "metaData",
+            "otherEntityRelationshipName": "vehicle"
+        }
+    ],
+    "changelogDate": "20181011113907",
+    "entityTableName": "vehicle",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
